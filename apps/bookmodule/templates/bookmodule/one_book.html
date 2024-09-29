@@ -1,0 +1,17 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Book Details {% endblock title %}
+
+{% block content %}
+  <a href="{% url 'books.list_books' %}">Go Back</a>
+
+  <h1>Details of {{ book.title }}</h1>
+  <h2>Author: {{ book.author }}</h2>  <!-- Assuming 'author' is a field in your Book model -->
+  <p>
+    <strong>{{ book.title }}, {{ book.edition }}</strong>  <!-- Assuming 'edition' is a field in your model -->
+    provides a clear, simple, engaging introduction to Internet and web programming.
+  </p>
+
+  <img src="{% if book.id %}{% static 'book'|add:book.id|stringformat:"d"%}.jpg{% else %}{% static 'default.jpg' %}{% endif %}" alt="{{ book.title }} img" width="200" height="250">
+{% endblock content %}
