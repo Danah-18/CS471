@@ -10,7 +10,7 @@
     <h1>Details of {{ book.title }}</h1>
     <h2>Author: {{ book.author }}</h2>
     <p><strong>Description:</strong> A description of the book goes here.</p>
-    <img src="{% static 'book'|add:book.id|stringformat:"d"%}.jpg" alt="{{ book.title }} cover" width="200" height="250">
+    <img src="{% static 'book'|add:book.id|stringformat:"d"%}.jpg" alt="{{ book.title }} cover" width="200" height="250">    
     {% else %}
     <p>Book not found.</p>
   {% endif %}

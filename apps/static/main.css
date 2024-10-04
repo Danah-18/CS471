@@ -1,0 +1,131 @@
+/* /////////////////links///////////////////////// */
+
+a {
+    padding: 10px;
+    text-align: center;
+    color: blue;
+    display: block;
+}
+
+.link1 {
+    background-color: rgb(151, 235, 173); /* Background color for Link 1 */
+    color: red;
+}
+
+.link2 {
+    background-color: rgb(130, 134, 130); /* Background color for Link 2 */
+    color: yellow;
+}
+
+.link3 {
+    background-color: rgb(0, 0, 0); /* Background color for Link 3 */
+    color: white;
+}
+
+
+a:hover {
+    color: red;
+}
+
+a:active {
+    color: green;
+}
+
+/* /////////////////formatting///////////////////////// */
+.formatting {
+    font-size: 1.3em;
+    color: green;
+    background-color: rgb(235, 231, 176);
+}
+
+.text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+/* //////////////lists//////////////////////////// */
+.listing {
+    font-size: 1.3em;
+    line-height: 1.5;
+    color: white;
+    background-color: rgb(87, 159, 169);
+}
+
+ul {
+    list-style-type: square; /* Style for unordered list */
+    padding-left: 20px;
+}
+
+ul ul {
+    list-style-type: circle; /* Style for nested unordered list */
+}
+
+/* //////////////tables//////////////////////////// */
+
+
+.T1 {
+    text-align: center; /* Center the heading */
+    font-size: 10px; /* Font size for heading */
+    font-weight: bold; /* Make header text bold */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove padding if any */
+    border: none; /* Ensure no border on h1 */
+}
+
+.table1 {
+    width: 125px; /* Width can be adjusted */
+    font-size: 18px; /* Font size for table text */
+    margin: auto; /* Center the table */
+    border-collapse: collapse; /* Ensures no space between borders */
+
+}
+
+.table1 th {
+    text-align: center; /* Center text in Table 1 */
+    font-weight: bold; /* Make header text bold */
+}
+
+.table1 td {
+    text-align: center; /* Center text in Table 1 */
+}
+
+.table1, .table1 th, .table1 td {
+    border: 1px solid; /* Border for table, th, and td */
+}
+
+
+.table2 h2 {
+    text-align: center; /* Center the heading */
+    font-weight: 100;
+    font-size: 17px; /* Font size for heading */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove padding if any */
+    border: none; /* Ensure no border on h1 */
+}
+
+.table2 {
+    width: 70%; /* Full width for Table 2 */
+    font-size: 18px; /* Font size for table text */
+    margin: auto; /* Center the table */
+    border-collapse: collapse; /* Ensures no space between borders */
+}
+
+.table2 table {
+    width: 100%; /* Ensure the table takes full width of the div */
+    border-collapse: collapse; /* Ensures no space between borders */
+}
+
+.table2 th, .table2 td {
+    border: 1px solid; /* Solid border for table cells */
+    text-align: center; /* Center text in table cells */
+}
+
+.table2 th {
+    font-weight: bold; /* Make header text bold */
+    padding: 10px; /* Add padding to cells */
+}
+
+

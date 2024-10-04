@@ -5,7 +5,6 @@ BOOKS = [
     {'id': 123, 'title': 'Continuous Delivery', 'author': 'J. Humble and D. Farley'},
     {'id': 456, 'title': 'Secrets of Reverse Engineering', 'author': 'E. Eilam'},
     {'id': 1, 'title': 'Internet & World Wide Web How To Program', 'author': 'Deitel, Deitel'}
-
 ]
 
 def index(request):
@@ -29,3 +28,15 @@ def viewbook(request, bookId):
 
 def aboutus(request):
     return render(request, 'bookmodule/aboutus.html')
+
+def links_page(request):
+    return render(request, 'bookmodule/links.html')
+
+def text_formatting_page(request):
+    return render(request, 'bookmodule/text_formatting.html')
+
+def listing_page(request):
+    return render(request, 'bookmodule/listing.html')
+
+def tables_page(request):
+    return render(request, 'bookmodule/tables.html')
