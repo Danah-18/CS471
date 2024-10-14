@@ -40,3 +40,35 @@ def listing_page(request):
 
 def tables_page(request):
     return render(request, 'bookmodule/tables.html')
+
+def __getBooksList():
+    book1 = {'id':12344321, 'title':'Continuous Delivery', 'author':'J. Humble and D. Farley'}
+    book2 = {'id':56788765, 'title':'Reversing: Secrets of Reverse Engineering', 'author':'E. Eilam'}
+    book3 = {'id':43211234, 'title':'The Hundred-Page Machine Learning Book', 'author':'A. Burkov'}
+    return [book1, book2, book3]
+
+def search_books(request):
+    if request.method == "POST":  # Checks if the request is a POST (form submission)
+        keyword = request.POST.get('keyword').lower()  # Get the keyword input from the form
+        isTitle = request.POST.get('option1')  # Check if the "Title" checkbox was selected
+        isAuthor = request.POST.get('option2')  # Check if the "Author" checkbox was selected
+
+        # Retrieve a list of books (from a predefined function or database)
+        books = __getBooksList()
+        filtered_books = []
+
+        # Iterate over the list of books to check if the keyword matches the title or author
+        for book in books:
+            contained = False
+            if isTitle and keyword in book['title'].lower():  # Match keyword in the title
+                contained = True
+            if isAuthor and keyword in book['author'].lower():  # Match keyword in the author
+                contained = True
+            if contained:
+                filtered_books.append(book)  # Add matching books to the result
+
+        # Render the results to the 'bookList.html' template, passing the filtered books
+        return render(request, 'bookmodule/bookList.html', {'books': filtered_books})
+
+    # If the request is not POST (i.e., when the page is first loaded), render the search form
+    return render(request, 'bookmodule/search_form.html')
