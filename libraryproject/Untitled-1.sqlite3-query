@@ -1,0 +1,6 @@
+
+SELECT * FROM bookmodule_book;
+INSERT INTO book (title, author, price, edition) VALUES 
+('Continuous Delivery', 'J.Humble and D. Farley', 120.00, 3),
+('Reversing: Secrets of Reverse Engineering', 'E. Eilam', 97.00, 2),
+('The Hundred-Page Machine Learning Book', 'Andriy Burkov', 100.00, 4);

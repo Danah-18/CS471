@@ -4,6 +4,12 @@
 
 {% block content %}
 <h1>Search Results</h1>
+
+{% for obj in books %}
+    <p>ID: {{ obj.id }}, Title: {{ obj.title }}</p>
+    <hr>
+{% endfor %}
+
 {% if books %}
     <ul>
     {% for book in books %}
@@ -14,3 +20,13 @@
     <p>No books found matching your search criteria.</p>
 {% endif %}
 {% endblock content %}
+
+
+
+
+
+
+
+
+
+

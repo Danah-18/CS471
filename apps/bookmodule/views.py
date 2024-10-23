@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
+from .models import Book
 
-# Sample data for demonstration purposes
+
 BOOKS = [
     {'id': 123, 'title': 'Continuous Delivery', 'author': 'J. Humble and D. Farley'},
     {'id': 456, 'title': 'Secrets of Reverse Engineering', 'author': 'E. Eilam'},
@@ -72,3 +74,26 @@ def search_books(request):
 
     # If the request is not POST (i.e., when the page is first loaded), render the search form
     return render(request, 'bookmodule/search_form.html')
+
+
+def insert_multiple_books(request):
+    books = [
+        Book(title='Continuous Delivery', author='J. Humble and D. Farley', price=120.00, edition=3),
+        Book(title='Reversing: Secrets of Reverse Engineering', author='E. Eilam', price=97.00, edition=2),
+        Book(title='The Hundred-Page Machine Learning Book', author='Andriy Burkov', price=100.00, edition=4),
+    ]
+    Book.objects.bulk_create(books)
+    return HttpResponse('Multiple books added successfully!')
+
+
+def simple_query(request):
+    mybooks = Book.objects.filter(title__icontains='and')
+    return render(request, 'bookmodule/bookList.html', {'books': mybooks})
+
+
+def lookup_query(request):
+    mybooks = Book.objects.filter(author__isnull=False).filter(title__icontains='and').filter(edition__gte=2).exclude(price__lte=100)[:10]
+    if len(mybooks) >= 1:
+        return render(request, 'bookmodule/bookList.html', {'books': mybooks})
+    else:
+        return render(request, 'bookmodule/index.html')

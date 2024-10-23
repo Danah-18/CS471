@@ -32,6 +32,7 @@ urlpatterns = [
     path('books/', include('apps.bookmodule.urls')),  # Include URLs from the bookmodule app
     path('users/', include('apps.usermodule.urls')),  # Include URLs from the usermodule app
     path('', apps.bookmodule.views.index), 
+
     
 ]
 
