@@ -1,0 +1,8 @@
+<form method="POST">
+    {% csrf_token %}
+    <label>Title: <input type="text" name="title"></label><br>
+    <label>Author: <input type="text" name="author"></label><br>
+    <label>Price: <input type="number" name="price" step="0.01"></label><br>
+    <label>Edition: <input type="number" name="edition"></label><br>
+    <button type="submit">Add Book</button>
+</form>
