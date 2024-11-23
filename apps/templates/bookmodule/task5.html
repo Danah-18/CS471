@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books Aggregation</title>
+</head>
+<body>
+    <h1>Books Aggregation</h1>
+    <ul>
+        <li>Total Books: {{ aggregates.total_books }}</li>
+        <li>Total Price: ${{ aggregates.total_price }}</li>
+        <li>Average Price: ${{ aggregates.avg_price }}</li>
+        <li>Maximum Price: ${{ aggregates.max_price }}</li>
+        <li>Minimum Price: ${{ aggregates.min_price }}</li>
+    </ul>
+</body>
+</html>

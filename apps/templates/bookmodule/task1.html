@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books Priced at 50 or Below</title>
+</head>
+<body>
+    <h1>Books Priced at 50 or Below</h1>
+    <ul>
+        {% for book in books %}
+            <li>
+                Title: {{ book.title }} <br>
+                Author: {{ book.author }} <br>
+                Price: ${{ book.price }}
+            </li>
+        {% empty %}
+            <p>No books found.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books Ordered by Title</title>
+</head>
+<body>
+    <h1>Books Ordered by Title</h1>
+    <ul>
+        {% for book in books %}
+            <li>
+                Title: {{ book.title }} <br>
+                Author: {{ book.author }} <br>
+                Edition: {{ book.edition }} <br>
+                Price: ${{ book.price }}
+            </li>
+        {% empty %}
+            <p>No books found.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

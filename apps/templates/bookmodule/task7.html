@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Count by City</title>
+</head>
+<body>
+    <h1>Student Count by City</h1>
+    <ul>
+        {% for city_count in city_counts %}
+            <li>
+                City: {{ city_count.address__city }} <br>
+                Number of Students: {{ city_count.student_count }}
+            </li>
+        {% empty %}
+            <p>No student data available.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

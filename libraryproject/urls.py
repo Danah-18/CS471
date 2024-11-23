@@ -25,14 +25,9 @@ Including another URLconf
 #]
 from django.contrib import admin
 from django.urls import include, path
-import apps.bookmodule.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('books/', include('apps.bookmodule.urls')),  # Include URLs from the bookmodule app
     path('users/', include('apps.usermodule.urls')),  # Include URLs from the usermodule app
-    path('', apps.bookmodule.views.index), 
-
-    
 ]
-
