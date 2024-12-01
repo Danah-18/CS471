@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students List</title>
+</head>
+<body>
+    <h1>List of Students</h1>
+    <a href="{% url 'add_student' %}">Add Student</a>
+    <ul>
+        {% for student in students %}
+            <li>
+                {{student.id}}
+                Name: {{ student.name }}
+                <br>
+                Age: {{ student.age }}
+                <br>
+                Address: {{student.address}}
+                <br>
+                Profile Picture: 
+                {% if student.profile_picture %}
+                    <img src="{{ student.profile_picture.url }}" alt="Profile Picture" width="100">
+                {% else %}
+                    No profile picture available.
+                {% endif %}                
+                <br><br>
+                <a href="{% url 'update_student' student.id %}">Edit</a> |
+                <a href="{% url 'delete_student' student.id %}">Delete</a>
+                <br>
+                <br>
+            </li>
+        {% empty %}
+            <p>No students available.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+</head>
+<body>
+    <h1>Edit Student (2)</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}  
+        <button type="submit">Save Changes</button>
+    </form>
+    {% if student.profile_picture %}
+        <h3>Current Profile Picture:</h3>
+        <img src="{{ student.profile_picture.url }}" alt="Profile Picture" width="100">
+    {% endif %}
+    <a href="{% url 'list_students2' %}">Back to List</a>
+</body>
+</html>

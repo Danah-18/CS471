@@ -1,5 +1,8 @@
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('', views.index, name="books.index"), 
@@ -35,18 +38,21 @@ urlpatterns = [
     path('books/lab9_part2/addbook', views.add_book, name='add_book'),
     path('books/lab9_part2/editbook/<int:id>', views.edit_book, name='edit_book'),
     path('books/lab9_part2/deletebook/<int:id>', views.delete_book, name='delete_book'),
+    
+    #lab10 Task1
+    path('add_student/', views.add_student, name='add_student'),
+    path('students/', views.list_students, name='list_students'),
+    path('update_student/<int:id>/', views.update_student, name='update_student'),
+    path('delete_student/<int:id>/', views.delete_student, name='delete_student'),
+    #lab10 Task2
+    path('add_student2/', views.add_student2, name='add_student2'),
+    path('students2/', views.list_students2, name='list_students2'),  
+    path('update_student2/<int:id>/', views.update_student2, name='update_student2'),  
+    path('delete_student2/<int:id>/', views.delete_student2, name='delete_student2'), 
+    #lab10 Task3
+    path('images/', views.upload_profile_picture, name='upload_profile_picture'),
+    
     ]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
